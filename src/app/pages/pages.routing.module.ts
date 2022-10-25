@@ -6,14 +6,6 @@ const routes: Routes = [
     path:'',
     loadChildren: () => import('./patients/patients.module').then(m => m.PatientsModule)
   },
-  {
-    path:'vitals',
-    loadChildren: () => import('./vitals/vitals.module').then(m => m.VitalsModule)
-  },
-  {
-    path:'consultations',
-    loadChildren: () => import('./consultations/consultations.module').then(m => m.ConsultationsModule)
-  }
 ];
 
 @NgModule({

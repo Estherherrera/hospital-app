@@ -6,21 +6,27 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PatientsRoutingModule } from './patients.routing.module';
 import { PatientsComponent } from './patients.component';
 import { DetailsPatientComponent } from './details-patient/details-patient.component';
-import { ListPatientsComponent } from './list-patients/list-patients.component';
+import { SharedModule } from '../../shared/shared.module';
+import { SearchAndFiltersComponent } from './search-and-filters/search-and-filters.component';
+import { FormPatientsComponent } from './form-patients/form-patients.component';
+
+
 
 
 @NgModule({
   declarations: [
     PatientsComponent,
     DetailsPatientComponent,
-    ListPatientsComponent
+    SearchAndFiltersComponent,
+    FormPatientsComponent
   ],
   imports: [
     CommonModule,
     PatientsRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    SharedModule,
   ]
 })
 export class PatientsModule { }
