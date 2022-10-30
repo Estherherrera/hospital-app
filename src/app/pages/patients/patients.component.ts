@@ -1,6 +1,8 @@
 import { Location } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { PatientsService } from './patients.service';
+import { Router } from '@angular/router';
+import { Subscribable, Subscriber, Observable, Subscription } from 'rxjs';
 
 
 @Component({
@@ -12,19 +14,21 @@ export class PatientsComponent implements OnInit, OnDestroy {
   
   tHead = {th1: 'Nombre', th2: 'Apellido'} 
   tBody = {tb1: 'name', tb2: 'surname'}
+  subscription!: Subscription
 
-  constructor(public patientsService: PatientsService, private location: Location) { }
+  constructor(public patientsService: PatientsService, private router: Router) { }
 
   ngOnInit(): void {
-    this.patientsService.loadPatients.subscribe(() => {
+    this.subscription = this.patientsService.loadPatients.subscribe(() => {
       this.getPatients()
-      this.location.back()
+      this.router.navigate(['/list-patients/0'])
+      console.log("Hola")
     })
     this.getPatients()
   }
 
   ngOnDestroy(): void {
-    this.patientsService.loadPatients.unsubscribe()
+    this.subscription.unsubscribe()
   }
 
   getPatients(): void {

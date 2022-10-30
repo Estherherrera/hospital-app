@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { catchError, of, throwError } from 'rxjs';
 import { PatientsService } from '../patients.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-details-patient',
@@ -9,7 +10,7 @@ import { PatientsService } from '../patients.service';
 })
 export class DetailsPatientComponent implements OnInit {
 
-  constructor(public patientsService: PatientsService) { }
+  constructor(public patientsService: PatientsService, public router: Router) { }
 
   ngOnInit(): void {
   }

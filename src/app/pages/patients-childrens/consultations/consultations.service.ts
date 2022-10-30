@@ -13,7 +13,7 @@ export class ConsultationsService {
 
   constructor(private http: HttpClient) { }
 
-  getConsultations(): Observable<Consultation[]>{
-    return this.http.get<Consultation[]>('http://localhost:8080/api/v1/consultation')
+  getConsultations(id:  number): Observable<Consultation[]>{
+    return this.http.get<Consultation[]>('http://localhost:8080/api/v1/consultation/patients/' + id)
   }
 }

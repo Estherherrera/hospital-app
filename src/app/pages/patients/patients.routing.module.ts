@@ -6,7 +6,7 @@ import { FormPatientsComponent } from './form-patients/form-patients.component';
 
 const routes: Routes = [
   {
-    path: 'list-patient',
+    path: '',
     component: PatientsComponent,
     children: [
       {
@@ -23,22 +23,10 @@ const routes: Routes = [
       {
         path: ':id/edit',
         component:FormPatientsComponent
-      }
-
+      },
     ]
   },
-  // {
-  //   path: '**',
-  //   redirectTo: 'list-patient'
-  // }
-  {
-    path:'list-vitals',
-    loadChildren: () => import('../patients-childrens/vitals/vitals.module').then(m => m.VitalsModule)
-  },
-  {
-    path:'list-consultations',
-    loadChildren: () => import('../patients-childrens/consultations/consultations.module').then(m => m.ConsultationsModule)
-  }
+ 
 ];
 
 @NgModule({

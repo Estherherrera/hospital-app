@@ -2,8 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { PatientsService } from '../../pages/patients/patients.service';
 import { TBody, THead } from './list.interface';
-import { VitalsService } from '../../pages/vitals/vitals.service';
-import { ConsultationsService } from '../../pages/consultations/consultations.service';
+import { VitalsService } from '../../pages/patients-childrens/vitals/vitals.service';
+import { ConsultationsService } from '../../pages/patients-childrens/consultations/consultations.service';
 import { Router } from '@angular/router';
 
 @Component({
