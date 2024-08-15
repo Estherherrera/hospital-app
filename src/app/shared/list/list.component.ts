@@ -25,7 +25,7 @@ export class ListComponent implements OnInit {
 
   itemSelect(itemSelected: any, i: number): void{
     this.numberRowSelected = i;
-       
+
     if(itemSelected.name){
         this.patientsService.patientSelected$.next(itemSelected)
     }

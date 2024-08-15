@@ -13,7 +13,7 @@ export class VitalsService {
 
   constructor(private http: HttpClient ) { }
 
-  getVitals(): Observable<Vital[]>{
-    return this.http.get<Vital[]>('http://localhost:8080/api/v1/vitals')  
+  getVitals(id: number): Observable<Vital[]>{
+    return this.http.get<Vital[]>('http://localhost:8080/api/v1/vitals/patients/' + id)  
   }
 }

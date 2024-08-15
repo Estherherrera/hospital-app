@@ -23,7 +23,7 @@ export class SearchAndFiltersComponent implements OnInit {
   }
 
   search(text: string): any {
-    console.log(text);
+    console.log('text');
    return this.patientsService.patients.filter((patient: any) => {
       const term = text.toLowerCase();
       return (

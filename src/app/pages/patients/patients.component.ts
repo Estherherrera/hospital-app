@@ -11,8 +11,8 @@ import { Subscribable, Subscriber, Observable, Subscription } from 'rxjs';
   styleUrls: ['./patients.component.scss']
 })
 export class PatientsComponent implements OnInit, OnDestroy {
-  
-  tHead = {th1: 'Nombre', th2: 'Apellido'} 
+
+  tHead = {th1: 'Nombre', th2: 'Apellido'}
   tBody = {tb1: 'name', tb2: 'surname'}
   subscription!: Subscription
 
@@ -21,9 +21,10 @@ export class PatientsComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.subscription = this.patientsService.loadPatients.subscribe(() => {
       this.getPatients()
-      this.router.navigate(['/list-patients/0'])
+      // this.router.navigate(['/list-patients/0'])
       console.log("Hola")
     })
+    console.log('Hola222')
     this.getPatients()
   }
 
@@ -32,13 +33,13 @@ export class PatientsComponent implements OnInit, OnDestroy {
   }
 
   getPatients(): void {
-    this.patientsService.getPatients() 
+    this.patientsService.getPatients()
     .subscribe(patients => {
       this.patientsService.patientsFiltered$.next(patients);
       this.patientsService.patients = patients;
     })
   }
 
-  
+
 
 }

@@ -10,7 +10,7 @@ export class ConsultationsService {
   consultationSelected$ = new BehaviorSubject<Consultation | false>(false)
   consultationsFiltered$ = new Subject<Consultation[]>()
   consultations: Consultation[] = []
-
+ 
   constructor(private http: HttpClient) { }
 
   getConsultations(id:  number): Observable<Consultation[]>{

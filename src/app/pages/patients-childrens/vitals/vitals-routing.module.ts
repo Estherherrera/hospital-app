@@ -17,7 +17,7 @@ const routes: Routes = [
         path: ':id/create',
         component: FormVitalsComponent,
         data: {
-          isNew: true
+          isNew: true 
         }
       },
     ]
