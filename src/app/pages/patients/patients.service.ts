@@ -22,6 +22,28 @@ export class PatientsService {
       email:            'string',
       emergencyContact: 'string',
       medicalInsurance: 'string',
+  },
+  {
+    patientId:        2,
+      name:             'Andrés',
+      surname:          'Herrera',
+      dateOfBirth:      '21-02-89',
+      phoneNumber:      '123456789',
+      address:          'Gijon',
+      email:            'andres@gmail.com',
+      emergencyContact: 'madre',
+      medicalInsurance: 'abc8140',
+  },
+  {
+    patientId:        3,
+      name:             'Yoel',
+      surname:          'Peréz',
+      dateOfBirth:      '22-08-95',
+      phoneNumber:      '789456123',
+      address:          'La Grita',
+      email:            'yoel@yoel.com',
+      emergencyContact: 'Hermana',
+      medicalInsurance: 'dfg4522',
   }
   ]
 
