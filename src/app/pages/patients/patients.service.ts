@@ -9,7 +9,7 @@ import { environment } from '../../../environments/environment';
 })
 export class PatientsService {
   patientSelected$ = new BehaviorSubject<Patient | false>(false)
-  patientsFiltered$ = new Subject<Patient[]>()
+  patientsFiltered$ = new BehaviorSubject<Patient[]>([])
 
     patients = [
     {
