@@ -9,7 +9,7 @@ import { switchMap } from 'rxjs';
   styleUrls: ['./vitals.component.scss']
 })
 export class VitalsComponent implements OnInit {
-  tHead = {th1: 'Fecha', th2: 'Presión Arterial'} 
+  tHead = {th1: 'Fecha', th2: 'Presión Arterial'}
   tBody = {tb1: 'dateTaken', tb2: 'bloodPressure'}
 
   constructor(public vitalsService: VitalsService, private route: ActivatedRoute) { }
@@ -18,7 +18,7 @@ export class VitalsComponent implements OnInit {
     this.route.params
     .pipe(
       switchMap(({patientId}) => {
-        return this.vitalsService.getVitals(patientId)
+        return this.vitalsService.getVitals()
       })
     )
     .subscribe(vitals => {
